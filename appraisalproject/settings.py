@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
+    'bootstrap3',
     'appraisalapp.apps.AppraisalappConfig',
     'cloudinary',
     'django.contrib.admin',

@@ -1,0 +1,60 @@
+{%extends "base.html"%}
+
+{% load bootstrap3 %}
+{% block content %}
+<div class="registration">
+    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" id="logimg">
+  <div class="row">
+
+    <!-- Empty div -->
+    <!-- <div class="col-md-3" >
+      
+       
+    </div> -->
+    <div class="col-md-6"  >
+      {% if form.errors %}
+        <p> Password or Username is incorrect </p>
+      {% endif %}
+
+      
+       
+  
+      <div class="panel panel-default" style=" background-color:rgba(255, 255, 255, 0.726); padding:30px; border-radius:10px;" >
+
+        <div class="panel-heading" >
+          <h3 class="text-center" >
+              
+              Log in
+          </h3>
+        </div>
+        <div class="panel-body">
+
+          <form  action="/accounts/login/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form%}
+
+            <div class="form-group" style=" width: 100%; padding-top: 3%;">
+                <input type="submit" class="btn" value="Login"  style="align-items: center; width: 100%; color: white; background-color:rgba(154, 57, 2, 0.65);" >
+            </div>
+              
+            
+
+            <input type="hidden" name="next" value="{{next}}">
+
+          </form>
+          <div class="sign-up text-center" style=" padding-top: 3%;">
+             <span>Don't have an account?</span>
+               
+             <a href="/accounts/register/" class="ml-2" style="color:rgba(154, 57, 2, 0.65) ;" >Sign Up</a>
+        </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+  </div>
+</div>
+
+{% endblock %}

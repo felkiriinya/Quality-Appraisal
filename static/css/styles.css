@@ -2,7 +2,7 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
-    
+    width: 100%;
 }
 
 /* <<<<<<<<<<<<<<<<<<<< Navbar >>>>>>>>>>>>>>>>>>>> */
@@ -139,4 +139,55 @@ footer{
 
 .footer-text{
     color: #ffffff;
+}
+
+/* <<<<<<<<<<<<<<< Registration >>>>>>>>>>>>>>>>>>>> */
+
+
+.registration{
+   width: 100%;
+   overflow: hidden;
+  
+}
+
+#logimg{
+    width: 100%;
+    margin-left: 0;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right: 0px;
+    filter: brightness(50%);
+    overflow-x: hidden;
+    /* height: 90vh; */
+    padding-top: 0px;
+}
+.panel{
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* text-align: center; */
+   
+    
+    font-family: 'Montserrat', sans-serif;
+}
+.col-md-6{
+    position: relative;
+    /* top: 60%; */
+    margin-top: -35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+    /* width: 600px;
+    min-width: 300px;   */
+}
+@media screen and (max-width: 1000px) {
+    .col-md-6{
+        position: relative;
+        margin-top: 40%;
+    }
+    .panel{
+        width: 100%;
+        font-size: 1rem;
+    }
 }
