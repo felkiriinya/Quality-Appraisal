@@ -9,13 +9,12 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import os
+
 from pathlib import Path
 
 import cloudinary
 import cloudinary.api
 import cloudinary.uploader
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,13 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nzq6+#9r6ti=^v@()3ev%9535i07w&%ku669n0m$^ztbip^or)'
+SECRET_KEY = ')lbv_y6$2^3w3-#g@h8n9jovpjh8_))-vt_ma(@xtz4wk!47)v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 
 # Application definition
@@ -46,11 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-cloudinary.config( 
-  cloud_name = "duhceor4r", 
-  api_key = "988552584751394", 
-  api_secret = "grnCc_TFy5WFWteERzMJRj3t88k" 
-)
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -81,6 +75,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'appraisalproject.wsgi.application'
 
+cloudinary.config( 
+  cloud_name = "duhceor4r", 
+  api_key = "988552584751394", 
+  api_secret = "grnCc_TFy5WFWteERzMJRj3t88k" 
+)
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -93,8 +93,6 @@ WSGI_APPLICATION = 'appraisalproject.wsgi.application'
 #     'PASSWORD':'ilovemyself',
 #     }
 # }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -133,8 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -146,6 +142,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_PROFILE_MODULE = 'accounts.Profile'
+
 
 # LOGOUT_REDIRECT_URL='/'
 
