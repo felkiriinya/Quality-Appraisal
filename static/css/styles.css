@@ -2,18 +2,21 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
+    
 }
 
 /* <<<<<<<<<<<<<<<<<<<< Navbar >>>>>>>>>>>>>>>>>>>> */
 
 .navbar{
-    background-image: linear-gradient(to right, #cbab82, rgba(154, 57, 2, 0.65));
+    background-image: linear-gradient(to right,  #cb9f82, rgba(154, 57, 2, 0.65));
     position: fixed;
     width: 100%;
+    
     z-index: 100;
     padding-bottom: 0px;
     border-bottom: 3px solid #ffffff;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0!important;
 }
 
 .navbar-brand,
@@ -25,6 +28,7 @@ body{
 
 .navbar-nav li a{
     color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .material-icons{
@@ -33,5 +37,106 @@ body{
 }
 
 .head:hover{
+    color: #ffffff;
+}
+
+/* <<<<<<<<<<<<<<<<<<<< Landing-page >>>>>>>>>>>>>>>>>>>> */
+.container-fluid{
+    width: 100%;
+    margin: 0px;
+    padding: 0;
+    /* object-fit: cover; */
+}
+.landing{
+    padding-top: 0% !important;
+}
+.banner-header{
+    width: 100%;
+  
+    margin-top: 0px;
+    padding-top: 0;
+    /* position: relative; */
+
+}
+
+#acc-banner-img{
+    width: inherit;
+    margin-left: 0;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right: 0px;
+    filter: brightness(50%);
+    
+    height: 90vh;
+    padding-top: 0px;
+    
+}
+
+.header-container{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 600px;
+    min-width: 300px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+.mission{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.mission-text{
+    box-sizing: border-box;
+    width: 45%;
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    padding: 30px;
+}
+
+.mission-img{
+    box-sizing: border-box;
+    width: 44%;
+    margin: 0px;
+    display: inline-block;
+    padding: 40px;
+    padding-top: 20px;
+    vertical-align: top;
+}
+
+#acc-mission-img{
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+    box-shadow: 20px 20px rgba(154, 57, 2, 0.65);
+}
+@media screen and (max-width: 1000px) {
+    .mission-text,
+    .mission-img{
+        width: 100%;
+        text-align: center;
+        padding: 40px;
+    }
+    #acc-mission-img{
+        max-width: 400px;
+    }
+}
+
+footer{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to right, #cb9f82,  rgba(154, 57, 2, 0.65));
+    border-top: 3px solid #ffffff;
+    padding-top: 40px;
+    text-align: center;
+    bottom: 0;
+}
+
+.footer-text{
     color: #ffffff;
 }
