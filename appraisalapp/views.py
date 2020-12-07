@@ -13,3 +13,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 def landing(request):
     
     return render(request,"landing.html")
+
+def logout(request):
+    
+    return render(request,"logout.html")    

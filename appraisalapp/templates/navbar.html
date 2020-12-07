@@ -11,10 +11,12 @@
               <li class="nav-item">
                 <a class="nav-item nav-link" href="{% url 'landing' %}">Home</a>
               </li>
-            
-                {% comment %} <li class="nav-item">
+              {% if user.is_superuser %}
+                <li class="nav-item">
                   <a class="nav-item nav-link" href="">Add Company</a>
-                </li> {% endcomment %}
+                </li>
+              {% endif %}
+               
               
                 <li class="nav-item">
                   <a class="nav-item nav-link" href="">Companies</a>
@@ -22,17 +24,19 @@
                 <li class="nav-item">
                   <a class="nav-item nav-link" href="">Latest Reviews</a>
                 </li>
-              
-                {% comment %} <li class="nav-item">
-                  <a class="nav-item nav-link" href="">Log Out</a>
-                </li> {% endcomment %}
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a>
+                </li>
+              {% else %}
+                
                 <li class="nav-item">
                   <a class="nav-item nav-link" href="/accounts/login/">Log In</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-item nav-link" href="/accounts/register/">Sign Up</a>
                 </li>
-             
+             {%endif%}
             </ul>
           </div>
         </div>
