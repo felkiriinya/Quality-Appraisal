@@ -13,8 +13,8 @@ import os
 from pathlib import Path
 
 import cloudinary
-import cloudinary.uploader
 import cloudinary.api
+import cloudinary.uploader
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,6 +30,7 @@ SECRET_KEY = 'nzq6+#9r6ti=^v@()3ev%9535i07w&%ku669n0m$^ztbip^or)'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -119,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Nairobi'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
