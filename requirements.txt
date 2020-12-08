@@ -9,6 +9,7 @@ django-bootstrap3==14.2.0
 django-heroku==0.3.1
 django-registration==3.1.1
 psycopg2==2.8.6
+python-decouple==3.3
 pytz==2020.4
 six==1.15.0
 soupsieve==2.0.1
