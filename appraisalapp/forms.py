@@ -7,12 +7,12 @@ from .models import Company
 class CreateCompanyForm(forms.ModelForm):
     class Meta:
         model = Company
-        fields = ('name', 'website','locations','sector_focus','stage','duration','deal','bio','logo',)
+        fields = ('name', 'website','locations','sector_focus','stage','duration','deal','bio','logo')
 
 
-class Form(forms.ModelForm):
+# class Form(forms.ModelForm):
     
-    class Meta:
-        model = 
-        fields = ("",)
+#     class Meta:
+#         model = 
+#         fields = ("",)
     

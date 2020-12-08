@@ -1,0 +1,235 @@
+{% extends 'companies/base.html' %}
+{
+{% block content %}
+    <div class="container">
+        <div class="acc-header">
+            <div class="acc-header-left">
+                <div class="acc-header-inner-logo">                        
+                    <img class="acc-logo-detail" src="{{ company.logo.url }}">
+                </div>
+                <div class="acc-header-inner-lg">
+                    <h2><b>{{ company.name }}</b></h2>
+                    <div class="emptyStars">
+                        <i class="fa fa-star" id="emptyStar1"></i>                        
+                        <i class="fa fa-star" id="emptyStar2"></i>
+                        <i class="fa fa-star" id="emptyStar3"></i>
+                        <i class="fa fa-star" id="emptyStar4"></i>
+                        <i class="fa fa-star" id="emptyStar5"></i>
+                    </div>
+                    <div class="halfStars">
+                        <i class="fas fa-star-half" {% if company.avg_rating < 0.25 %} style="display:none;" {% endif %} id="halfStar1"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 1.25 %} style="display:none;" {% endif %} id="halfStar2"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 2.25 %} style="display:none;" {% endif %} id="halfStar3"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 3.25 %} style="display:none;" {% endif %} id="halfStar4"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 4.25 %} style="display:none;" {% endif %} id="halfStar5"></i>
+                    </div>
+                    <div class="fullStars">
+                        <i class="fa fa-star" {% if company.avg_rating < 0.75 %} style="display:none;" {% endif %} id="fullStar1"></i>
+                        <i class="fa fa-star" {% if company.avg_rating < 1.75 %} style="display:none;" {% endif %} id="fullStar2"></i>
+                        <i class="fa fa-star" {% if company.avg_rating < 2.75 %} style="display:none;" {% endif %} id="fullStar3"></i>
+                        <i class="fa fa-star" {% if company.avg_rating < 3.75 %} style="display:none;" {% endif %} id="fullStar4"></i>
+                        <i class="fa fa-star" {% if company.avg_rating < 4.75 %} style="display:none;" {% endif %} id="fullStar5"></i>
+                    </div>
+                    <br>
+                    <p class="company-rating">({{ company.avg_rating|floatformat:2 }} out of 5)</p>
+                </div>
+                <div class="acc-bio">
+                    <hr>
+                    <p>{{ company.bio }}</p>
+                </div>
+            </div>
+            <div class="acc-header-inner-sm">
+                <p class="blue-text"><b>Website: </b><a href="{{ company.website }}">{{ company.website }}</a></p>
+                <hr>
+                <p class="blue-text"><b>Locations: </b>{{ company.locations }}</p>
+                <hr>
+                <p class="blue-text"><b>Sector focus: </b>{{ company.sector_focus }}</p>
+                <hr>
+                <p class="blue-text"><b>Stage: </b>{{ company.stage }}</p>
+                <hr>
+                <p class="blue-text"><b>Deal: </b>{{ company.deal }}</p>
+                <hr>
+                <p class="blue-text"><b>Duration: </b>{{ company.duration }}</p>
+            </div>
+        </div>
+        <br>
+        <div class="acc-review-ratings">
+            <div class="stars-container">
+                <h5><b>Mentorship:</b></h5>
+                <div class="emptyStarsReview">
+                    <i class="fa fa-star" id="emptyStarSmall1"></i>                        
+                    <i class="fa fa-star" id="emptyStarSmall2"></i>
+                    <i class="fa fa-star" id="emptyStarSmall3"></i>
+                    <i class="fa fa-star" id="emptyStarSmall4"></i>
+                    <i class="fa fa-star" id="emptyStarSmall5"></i>
+                </div>
+                <div class="halfStarsReview">
+                    <i class="fa fa-star-half" {% if company.avg_mentorship < 0.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_mentorship < 1.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_mentorship < 2.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_mentorship < 3.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_mentorship < 4.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                </div>
+                <div class="fullStarsReview">
+                    <i class="fa fa-star" {% if company.avg_mentorship < 0.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_mentorship < 1.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_mentorship < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_mentorship < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_mentorship < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                </div>
+                <p class="company-rating">({{ company.avg_mentorship|floatformat:2 }} out of 5)</p>
+            </div>
+            <div class="stars-container">
+                <h5><b>Hiring:</b></h5>
+                <div class="emptyStarsReview">
+                    <i class="fa fa-star" id="emptyStarSmall1"></i>                        
+                    <i class="fa fa-star" id="emptyStarSmall2"></i>
+                    <i class="fa fa-star" id="emptyStarSmall3"></i>
+                    <i class="fa fa-star" id="emptyStarSmall4"></i>
+                    <i class="fa fa-star" id="emptyStarSmall5"></i>
+                </div>
+                <div class="halfStarsReview">
+                    <i class="fa fa-star-half" {% if company.avg_hiring < 0.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_hiring < 1.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_hiring < 2.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_hiring < 3.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_hiring < 4.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                </div>
+                <div class="fullStarsReview">
+                    <i class="fa fa-star" {% if company.avg_hiring < 0.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_hiring < 1.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_hiring < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_hiring < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_hiring < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                </div>
+                <p class="company-rating">({{ company.avg_hiring|floatformat:2 }} out of 5)</p>
+            </div>
+            <div class="stars-container">
+                <h5><b>Community:</b></h5>
+                <div class="emptyStarsReview">
+                    <i class="fa fa-star" id="emptyStarSmall1"></i>                        
+                    <i class="fa fa-star" id="emptyStarSmall2"></i>
+                    <i class="fa fa-star" id="emptyStarSmall3"></i>
+                    <i class="fa fa-star" id="emptyStarSmall4"></i>
+                    <i class="fa fa-star" id="emptyStarSmall5"></i>
+                </div>
+                <div class="halfStarsReview">
+                    <i class="fa fa-star-half" {% if company.avg_community < 0.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_community < 1.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_community < 2.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_community < 3.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_community < 4.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                </div>
+                <div class="fullStarsReview">
+                    <i class="fa fa-star" {% if company.avg_community < 0.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_community < 1.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_community < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_community < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_community < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                </div>
+                <p class="company-rating">({{ company.avg_community|floatformat:2 }} out of 5)</p>
+            </div>
+            <div class="stars-container">
+                <br>
+                <h5><b>Fundraising:</b></h5>
+                <div class="emptyStarsReview">
+                    <i class="fa fa-star" id="emptyStarSmall1"></i>                        
+                    <i class="fa fa-star" id="emptyStarSmall2"></i>
+                    <i class="fa fa-star" id="emptyStarSmall3"></i>
+                    <i class="fa fa-star" id="emptyStarSmall4"></i>
+                    <i class="fa fa-star" id="emptyStarSmall5"></i>
+                </div>
+                <div class="halfStarsReview">
+                    <i class="fa fa-star-half" {% if company.avg_fundraising < 0.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_fundraising < 1.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_fundraising < 2.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_fundraising < 3.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_fundraising < 4.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                </div>
+                <div class="fullStarsReview">
+                    <i class="fa fa-star" {% if company.avg_fundraising < 0.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_fundraising < 1.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_fundraising < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_fundraising < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_fundraising < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                </div>
+                <p class="company-rating">({{ company.avg_fundraising|floatformat:2 }} out of 5)</p>
+            </div>
+            <div class="stars-container">
+                <br>
+                <h5><b>Corporate Development:</b></h5>
+                <div class="emptyStarsReview">
+                    <i class="fa fa-star" id="emptyStarSmall1"></i>                        
+                    <i class="fa fa-star" id="emptyStarSmall2"></i>
+                    <i class="fa fa-star" id="emptyStarSmall3"></i>
+                    <i class="fa fa-star" id="emptyStarSmall4"></i>
+                    <i class="fa fa-star" id="emptyStarSmall5"></i>
+                </div>
+                <div class="halfStarsReview">
+                    <i class="fa fa-star-half" {% if company.avg_corporate < 0.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_corporate < 1.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_corporate < 2.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_corporate < 3.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                    <i class="fa fa-star-half" {% if company.avg_corporate < 4.25 %} style="display:none" {% endif %} id="halfStarSmall1"></i>
+                </div>
+                <div class="fullStarsReview">
+                    <i class="fa fa-star" {% if company.avg_corporate < 0.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_corporate < 1.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_corporate < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_corporate < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                    <i class="fa fa-star" {% if company.avg_corporate < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
+                </div>
+                <p class="company-rating">({{ company.avg_corporate|floatformat:2 }} out of 5)</p>
+            </div>
+        </div>        
+        <div class="options">
+            <a class="btn" id="review" href="">Leave A Review  <i class="fas fa-pencil-alt" style="font-size:18px;"></i></a>
+            <a class="btn" id="view" href="">Read Reviews  <i class="far fa-comment" style="font-size:18px;"></i></a>
+        </div>
+        <h4 style="text-align:center"><b>Recent reviews for {{ company.name }}</b></h4>
+        <div class="acc-reviews">
+            {% if reviews %}
+                {% for review in reviews %}
+                <a href="{% url 'review_detail' review.pk %}" style="text-decoration:none;">
+                    <div class="review-box">
+                        <div class="emptyStarsMini">
+                            <i class="fa fa-star" id="emptyStarMini1"></i>                        
+                            <i class="fa fa-star" id="emptyStarMini2"></i>
+                            <i class="fa fa-star" id="emptyStarMini3"></i>
+                            <i class="fa fa-star" id="emptyStarMini4"></i>
+                            <i class="fa fa-star" id="emptyStarMini5"></i>
+                        </div>
+                        <div class="halfStarsMini">
+                            <i class="fas fa-star-half" {% if review.overall < 0.25 %} style="display:none;" {% endif %} id="halfStarMini1"></i>
+                            <i class="fas fa-star-half" {% if review.overall < 1.25 %} style="display:none;" {% endif %} id="halfStarMini2"></i>
+                            <i class="fas fa-star-half" {% if review.overall < 2.25 %} style="display:none;" {% endif %} id="halfStarMini3"></i>
+                            <i class="fas fa-star-half" {% if review.overall < 3.25 %} style="display:none;" {% endif %} id="halfStarMini4"></i>
+                            <i class="fas fa-star-half" {% if review.overall < 4.25 %} style="display:none;" {% endif %} id="halfStarMini5"></i>
+                        </div>
+                        <div class="fullStarsMini">
+                            <i class="fa fa-star" {% if review.overall < 0.75 %} style="display:none;" {% endif %} id="fullStarMini1"></i>                            
+                            <i class="fa fa-star" {% if review.overall < 1.75 %} style="display:none;" {% endif %} id="fullStarMini2"></i>
+                            <i class="fa fa-star" {% if review.overall < 2.75 %} style="display:none;" {% endif %} id="fullStarMini3"></i>
+                            <i class="fa fa-star" {% if review.overall < 3.75 %} style="display:none;" {% endif %} id="fullStarMini4"></i>
+                            <i class="fa fa-star" {% if review.overall < 4.75 %} style="display:none;" {% endif %} id="fullStarMini5"></i>
+                        </div>
+                        <p class="review-title"><b><i>"{{ review.title }}"</i></b></p>
+                        <p class="review-author"><b>{{ review.author }} reviewed {{ review.subject }}</b></p>
+                    </div>
+                </a>
+                {% endfor %}
+            {% else %}
+                <p style="text-align:center">No reviews have yet been posted for {{ company.name }}. Be the first to provide feedback!</p>
+            {% endif %}
+        </div>
+        <div class="options">
+            {% if company.author == user %}
+                <br>
+                <a class="btn" id="update" href="{% url 'company_update' company.pk %}">Update Company</a>
+                <a class="btn" id="delete" href="{% url 'company_delete' company.pk %}">Delete Company</a>
+                <br>
+            {% endif %}
+            <br>
+        </div>
+    </div>
+{% endblock %}

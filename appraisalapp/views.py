@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http  import HttpResponse,Http404
-# from .models import Project,Profile,Rating
+from .models import Company
 from django.db.models import Avg
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render,redirect,get_object_or_404
@@ -35,7 +35,7 @@ def createcompany(request):
 
 def companylist(request):
     companies = Company.objects.all().order_by('-date_posted')
-    return render(request, 'companies/company_home.html')
+    return render(request, 'companies/company_home.html',{'companies':companies})
 
 def companydetails(request, pk):
 
@@ -47,6 +47,6 @@ def companydetails(request, pk):
 
     return render(request, 'companies/company_details.html', params)
 
-    
+
 
 
