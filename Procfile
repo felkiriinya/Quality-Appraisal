@@ -1,0 +1,1 @@
+web: gunicorn Quality-Appraisal.wsgi --log-file -
