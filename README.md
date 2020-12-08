@@ -39,10 +39,10 @@ customisation of radio buttons in the review form to create a responsive five-st
 - SQL: All data inputted into the website by administrators and users is saved to a Postgresql database.
 
 ## Live link
-Visit the application on .
+Visit the application on https://qualityappraisal.herokuapp.com/.
 
 ## Figma Link
-This is the [figma]() link to my design.
+This is the [figma](https://www.figma.com/file/GAiWTBkCTItKMgg2RXuxhg/Appraisal?node-id=0%3A1) link to my design.
 
 ## Support and contact details
 
