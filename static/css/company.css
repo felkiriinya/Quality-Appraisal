@@ -472,8 +472,8 @@ p{
 }
 
 .btn{
-    border: 3px solid #003366;
-    color: #003366;
+    border: 3px solid #c07b14;
+    color: #bb6926;
     background-color: #f2f2f2;
     margin: 10px 5px;
     padding: 7px;
@@ -486,23 +486,23 @@ p{
 }
 
 .btn:hover{
-    background-color: #003366;
+    background-color: #cc7024;
     color: #ffffff;
     transition: 0.5s;
 }
 
 #submit{
-    border: 3px solid #e7717d;
+    border: 3px solid #cf7246;
 }
 
 #submit:hover{
-    background-color: #e7717d;
+    background-color: #b37018;
     transition: 0.5s;
 }
 
 #company-index{
     border-radius: 5px;
-    background-image: linear-gradient(to right, #cbab82, #e7717d);
+    background-image: linear-gradient(to right, #cbab82, #e79c71);
     border: none;
     color: #ffffff;
     text-align: center;
@@ -543,7 +543,7 @@ p{
     text-align: center;
 }
 
-#scrollTop{
+/* #scrollTop{
     height: 40px;
     width: 40px;
     background-color: #e7717d;
@@ -564,7 +564,7 @@ p{
 #scrollTop.visible{
     visibility: visible;
     transition: 0.5s;
-}
+} */
 
 /* <<<<<<<<<<<<<<<<<<<< Images >>>>>>>>>>>>>>>>>>>> */
 
@@ -596,7 +596,7 @@ p{
 #emptyStar3,
 #emptyStar4,
 #emptyStar5{
-    color: #b37747;
+    color: #ebe8e6;
     font-size: 45px;
     text-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
@@ -636,7 +636,7 @@ p{
 #emptyStarSmall3,
 #emptyStarSmall4,
 #emptyStarSmall5{
-    color: #b37747;
+    color: #faf9f9;
     font-size: 30px;
     text-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
@@ -676,7 +676,7 @@ p{
 #emptyStarMini3,
 #emptyStarMini4,
 #emptyStarMini5{
-    color:  #b37747;
+    color:  #f5f0ec;
     font-size: 20px;
     text-shadow: 0 2px 5px rgba(0,0,0,.5);
 }

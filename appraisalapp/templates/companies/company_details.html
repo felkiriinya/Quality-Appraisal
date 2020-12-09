@@ -1,5 +1,5 @@
 {% extends 'companies/base.html' %}
-{
+{% load bootstrap3 %} {% load static %}
 {% block content %}
     <div class="container">
         <div class="acc-header">
@@ -190,7 +190,7 @@
         <div class="acc-reviews">
             {% if reviews %}
                 {% for review in reviews %}
-                <a href="{% url 'review_detail' review.pk %}" style="text-decoration:none;">
+                <a href="{% url 'reviewdetails' review.pk %}" style="text-decoration:none;">
                     <div class="review-box">
                         <div class="emptyStarsMini">
                             <i class="fa fa-star" id="emptyStarMini1"></i>                        

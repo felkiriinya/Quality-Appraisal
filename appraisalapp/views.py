@@ -39,14 +39,16 @@ def createcompany(request):
 
 def companylist(request):
     companies = Company.objects.all().order_by('-date_posted')
+    
     return render(request, 'companies/company_home.html',{'companies':companies})
 
 def companydetails(request, pk):
 
     company = get_object_or_404(Company, pk = pk)
-
+    reviews = Review.objects.filter(company=company).order_by('-date_posted')[:4]
     params = {
         'company': company,
+        'reviews' : reviews
     }
 
     return render(request, 'companies/company_details.html', params)

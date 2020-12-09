@@ -1,5 +1,5 @@
 {% extends 'companies/base.html' %}
-
+{% load bootstrap3 %} {% load static %}
 {% block content %}
     <div class="container">
     {% if companies %}
@@ -15,18 +15,18 @@
                         <i class="fa fa-star" id="emptyStarSmall5"></i>
                     </div>
                     <div class="halfStarsHome">
-                        <i class="fas fa-star-half" {% if accelerator.avg_rating < 0.25 %} style="display:none;" {% endif %} id="halfStarSmall1"></i>
-                        <i class="fas fa-star-half" {% if accelerator.avg_rating < 1.25 %} style="display:none;" {% endif %} id="halfStarSmall2"></i>
-                        <i class="fas fa-star-half" {% if accelerator.avg_rating < 2.25 %} style="display:none;" {% endif %} id="halfStarSmall3"></i>
-                        <i class="fas fa-star-half" {% if accelerator.avg_rating < 3.25 %} style="display:none;" {% endif %} id="halfStarSmall4"></i>
-                        <i class="fas fa-star-half" {% if accelerator.avg_rating < 4.25 %} style="display:none;" {% endif %} id="halfStarSmall5"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 0.25 %} style="display:none;" {% endif %} id="halfStarSmall1"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 1.25 %} style="display:none;" {% endif %} id="halfStarSmall2"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 2.25 %} style="display:none;" {% endif %} id="halfStarSmall3"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 3.25 %} style="display:none;" {% endif %} id="halfStarSmall4"></i>
+                        <i class="fas fa-star-half" {% if company.avg_rating < 4.25 %} style="display:none;" {% endif %} id="halfStarSmall5"></i>
                     </div>
                     <div class="fullStarsHome">
-                        <i class="fa fa-star" {% if accelerator.avg_rating < 0.75 %} style="display:none;" {% endif %} id="fullStarSmall1"></i>                            
-                        <i class="fa fa-star" {% if accelerator.avg_rating < 1.75 %} style="display:none;" {% endif %} id="fullStarSmall2"></i>
-                        <i class="fa fa-star" {% if accelerator.avg_rating < 2.75 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
-                        <i class="fa fa-star" {% if accelerator.avg_rating < 3.75 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
-                        <i class="fa fa-star" {% if accelerator.avg_rating < 4.75 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
+                        <i class="fa fa-star" {% if company.avg_rating < 0.75 %} style="display:none;" {% endif %} id="fullStarSmall1"></i>                            
+                        <i class="fa fa-star" {% if company.avg_rating < 1.75 %} style="display:none;" {% endif %} id="fullStarSmall2"></i>
+                        <i class="fa fa-star" {% if company.avg_rating < 2.75 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
+                        <i class="fa fa-star" {% if company.avg_rating < 3.75 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
+                        <i class="fa fa-star" {% if company.avg_rating < 4.75 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
                     </div>
                     <br>
                     <br>
