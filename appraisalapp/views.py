@@ -57,18 +57,21 @@ def addreview(request, id):
 
     current_company = Company.objects.get(id=id)
     if request.method == "POST":
-        review = CreateReviewForm(request.POST, instance = request.user)
+        review = CreateReviewForm(request.POST, request.FILES)
         if review.is_valid():
             new_review = review.save(commit=False)
             new_review.user = current_user
             new_review.company = current_company
             new_review.save()
-            return redirect('reviewhome', id)
+            return redirect('reviewhome')
     else:
-        review = CreateReviewForm(instance=request.user)  
+        review = CreateReviewForm()  
 
     params = {
-        'review':review
+        'review':review,
+        'company':current_company,
+        'user': current_user
+
     }          
     return render(request, 'reviews/review_form.html', params)
 

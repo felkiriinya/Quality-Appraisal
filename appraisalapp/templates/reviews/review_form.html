@@ -4,7 +4,7 @@
 {% block content %}
     <div class="container">
         <div class="form-squeeze">
-            <form method="POST" class="reviewForm">
+            <form action="{%url 'addreview' company.id%}" method="POST" class="reviewForm">
                 {% csrf_token %}
                 <fieldset class="form-group">
                     <legend>Leave a review</legend>
