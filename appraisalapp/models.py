@@ -80,7 +80,7 @@ class Company(models.Model):
         corporate_result = Review.objects.filter(company=self).aggregate(avg_corporate=Avg('corporate_development'))['avg_corporate']
         return corporate_result if len(quantity) > 0 else float(0)
      
-
+    
 class Review(models.Model):
     
     RATINGS=(
@@ -114,3 +114,6 @@ class Review(models.Model):
         self.overall = (int(self.mentorship) + int(self.hiring) + int(self.community) + \
             int(self.fundraising) + int(self.corporate_development)) / 5
         super(Review, self).save(*args, **kwargs)
+
+    def delete_review(self):
+        self.delete()    
