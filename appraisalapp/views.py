@@ -11,8 +11,9 @@ from .forms import CreateCompanyForm,CreateReviewForm
 
 # Create your views here.
 def landing(request):
-    
-    return render(request,"landing.html")
+    reviews = Review.objects.all().order_by('-date_posted')[:4]
+
+    return render(request,"landing.html", {'reviews': reviews})
 
 def logout(request):
     

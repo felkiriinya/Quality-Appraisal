@@ -39,7 +39,12 @@ body{
     height: 40px;
     width: auto;
 }
-
+.head:hover{
+    color: #ffffff;
+}
+.head{
+    color: white !important;
+}
 /* <<<<<<<<<<<<<<<<<<<< Body >>>>>>>>>>>>>>>>>>>> */
 
 html{
