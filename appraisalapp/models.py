@@ -77,7 +77,7 @@ class Company(models.Model):
     @property
     def avg_corporate(self):
         quantity = Review.objects.filter(subject=self)
-        corporate_result = Review.objects.filter(subject=self).aggregate(avg_corporate=Avg('corporate_dev'))['avg_corporate']
+        corporate_result = Review.objects.filter(subject=self).aggregate(avg_corporate=Avg('corporate_development'))['avg_corporate']
         return corporate_result if len(quantity) > 0 else float(0)
      
 
@@ -100,7 +100,7 @@ class Review(models.Model):
     hiring = models.IntegerField(choices=RATINGS, blank=False, default=1)
     community = models.IntegerField(choices=RATINGS, blank=False, default=1)
     fundraising = models.IntegerField(choices=RATINGS, blank=False, default=1)
-    cop_dev= models.IntegerField(choices=RATINGS, blank=False, default=1)
+    corporate_development= models.IntegerField(choices=RATINGS, blank=False, default=1)
     overall = models.DecimalField(decimal_places=2, max_digits=3)
 
 
@@ -112,5 +112,5 @@ class Review(models.Model):
 
     def save(self, *args, **kwargs):
         self.overall = (int(self.mentorship) + int(self.hiring) + int(self.community) + \
-            int(self.fundraising) + int(self.cop_dev)) / 5
+            int(self.fundraising) + int(self.corporate_development)) / 5
         super(Review, self).save(*args, **kwargs)

@@ -10,5 +10,8 @@ urlpatterns=[
     url(r'^companylist/$', views.companylist, name='companylist'),
     url(r'^createcompany/$', views.createcompany, name='createcompany'),
     url(r'^companydetails/(\d+)$', views.companydetails, name='companydetails'),
+    url(r'^reviewhome/(\d+)$', views.reviewhome, name='reviewhome'),
+    url(r'^addreview/$', views.addreview, name='addreview'),
+    url(r'^reviewdetails/(\d+)$', views.reviewdetails, name='reviewdetails'),
 
 ]   
