@@ -1,7 +1,8 @@
 {% extends 'companies/base.html' %}
 {% load bootstrap3 %} {% load static %}
 {% block content %}
-    <div class="container">
+    <div class="container" >
+        
     {% if companies %}
         {% for company in companies %}
             <a href="{% url 'companydetails' company.pk %}">

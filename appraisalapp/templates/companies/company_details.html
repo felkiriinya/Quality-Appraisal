@@ -214,7 +214,7 @@
                             <i class="fa fa-star" {% if review.overall < 4.75 %} style="display:none;" {% endif %} id="fullStarMini5"></i>
                         </div>
                         <p class="review-title"><b><i>"{{ review.title }}"</i></b></p>
-                        <p class="review-author"><b>{{ review.author }} reviewed {{ review.subject }}</b></p>
+                        <p class="review-author"><b>{{ review.user }} reviewed {{ review.company }}</b></p>
                     </div>
                 </a>
                 {% endfor %}
