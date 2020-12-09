@@ -14,8 +14,8 @@ class CreateReviewForm(forms.ModelForm):
         model = Review
         fields = ('title', 'feedback','mentorship','hiring','community','fundraising','corporate_development')        
         widgets = {
-            'title': Textarea(attrs={'cols': 80, 'rows': 1}),
-            'feedback': Textarea(attrs={'cols': 80, 'rows': 15}),
+            'title': Textarea(attrs={'cols': 60, 'rows': 1}),
+            'feedback': Textarea(attrs={'cols': 60, 'rows': 15}),
             'mentorship': forms.RadioSelect,
             'hiring': forms.RadioSelect,
             'community': forms.RadioSelect,

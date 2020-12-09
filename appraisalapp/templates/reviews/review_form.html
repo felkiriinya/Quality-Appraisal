@@ -3,15 +3,17 @@
 {% block page_title %}Leave A Review{% endblock %}
 {% load bootstrap3 %} {% load static %}
 {% block content %}
-    <div class="container">
+    <div class="container" >
         <div class="form-squeeze">
-            <form action="{%url 'addreview' company.id%}" method="POST" class="reviewForm">
+            <form action="{%url 'addreview' company.id%}" method="POST" class="reviewForm" >
                 {% csrf_token %}
                 <fieldset class="form-group">
                     <legend>Leave a review</legend>
+                    <label> Title</label>
                     {{ review.title }}
                     <br>
                     <br>
+                    <label> Feedback</label>
                     {{ review.feedback }}
                     <hr>
                     <div class="stars-box">
