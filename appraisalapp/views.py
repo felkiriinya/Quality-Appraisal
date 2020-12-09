@@ -3,11 +3,11 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http  import HttpResponse,Http404
-from .models import Company
+from .models import Company,Review
 from django.db.models import Avg
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render,redirect,get_object_or_404
-from .forms import CreateCompanyForm
+from .forms import CreateCompanyForm,CreateReviewForm
 
 # Create your views here.
 def landing(request):
@@ -19,13 +19,17 @@ def logout(request):
     return render(request,"logout.html")    
 
 def createcompany(request):
+    current_user = request.user
     if request.method == "POST":
-        create = CreateCompanyForm(request.POST, instance = request.user)
+        create = CreateCompanyForm(request.POST, request.FILES)
         if create.is_valid():
-            create.save()
+            new_company = create.save(commit=False)
+            new_company.user = current_user
+
+            new_company.save()
             return redirect('companylist')
     else:
-        create = CreateCompanyForm(instance=request.user)  
+        create = CreateCompanyForm()  
 
     params = {
         'create':create
@@ -56,10 +60,10 @@ def addreview(request, id):
         review = CreateReviewForm(request.POST, instance = request.user)
         if review.is_valid():
             new_review = review.save(commit=False)
-            new_Review.user = current_user
-            new_review.company = company
+            new_review.user = current_user
+            new_review.company = current_company
             new_review.save()
-            return redirect('reviewhome')
+            return redirect('reviewhome', id)
     else:
         review = CreateReviewForm(instance=request.user)  
 

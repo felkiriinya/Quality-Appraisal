@@ -26,7 +26,7 @@ class Company(models.Model):
     avg_mentorship = models.DecimalField(decimal_places=2, max_digits=3)
     avg_hiring = models.DecimalField(decimal_places=2, max_digits=3)
     avg_community = models.DecimalField(decimal_places=2, max_digits=3)
-    avg_corporate_dev = models.DecimalField(decimal_places=2, max_digits=3)
+    avg_corporate = models.DecimalField(decimal_places=2, max_digits=3)
     avg_fundraising = models.DecimalField(decimal_places=2, max_digits=3)
 
     def __str__(self):
@@ -46,38 +46,38 @@ class Company(models.Model):
 
     @property
     def avg_rating(self):
-        quantity = Review.objects.filter(subject=self)
-        overall_result = Review.objects.filter(subject=self).aggregate(avg_rating=Avg('overall'))['avg_rating']
+        quantity = Review.objects.filter(company=self)
+        overall_result = Review.objects.filter(company=self).aggregate(avg_rating=Avg('overall'))['avg_rating']
         return overall_result if len(quantity) > 0 else float(0)
     
     @property
     def avg_mentorship(self):
-        quantity = Review.objects.filter(subject=self)
-        mentorship_result = Review.objects.filter(subject=self).aggregate(avg_mentorship=Avg('mentorship'))['avg_mentorship']
+        quantity = Review.objects.filter(company=self)
+        mentorship_result = Review.objects.filter(company=self).aggregate(avg_mentorship=Avg('mentorship'))['avg_mentorship']
         return mentorship_result if len(quantity) > 0 else float(0)
     
     @property
     def avg_hiring(self):
-        quantity = Review.objects.filter(subject=self)
-        hiring_result = Review.objects.filter(subject=self).aggregate(avg_hiring=Avg('hiring'))['avg_hiring']
+        quantity = Review.objects.filter(company=self)
+        hiring_result = Review.objects.filter(company=self).aggregate(avg_hiring=Avg('hiring'))['avg_hiring']
         return hiring_result if len(quantity) > 0 else float(0)
     
     @property
     def avg_community(self):
-        quantity = Review.objects.filter(subject=self)
-        community_result = Review.objects.filter(subject=self).aggregate(avg_community=Avg('community'))['avg_community']
+        quantity = Review.objects.filter(company=self)
+        community_result = Review.objects.filter(company=self).aggregate(avg_community=Avg('community'))['avg_community']
         return community_result if len(quantity) > 0 else float(0)
     
     @property
     def avg_fundraising(self):
-        quantity = Review.objects.filter(subject=self)
-        fundraising_result = Review.objects.filter(subject=self).aggregate(avg_fundraising=Avg('fundraising'))['avg_fundraising']
+        quantity = Review.objects.filter(company=self)
+        fundraising_result = Review.objects.filter(company=self).aggregate(avg_fundraising=Avg('fundraising'))['avg_fundraising']
         return fundraising_result if len(quantity) > 0 else float(0)
     
     @property
     def avg_corporate(self):
-        quantity = Review.objects.filter(subject=self)
-        corporate_result = Review.objects.filter(subject=self).aggregate(avg_corporate=Avg('corporate_development'))['avg_corporate']
+        quantity = Review.objects.filter(company=self)
+        corporate_result = Review.objects.filter(company=self).aggregate(avg_corporate=Avg('corporate_development'))['avg_corporate']
         return corporate_result if len(quantity) > 0 else float(0)
      
 
@@ -105,7 +105,7 @@ class Review(models.Model):
 
 
     def __str__(self):
-        return self.company
+        return self.title
 
     def get_absolute_url(self):
         return reverse("review_detail", kwargs={"pk": self.pk})

@@ -22,7 +22,7 @@
                   <a class="nav-item nav-link" href="{% url 'companylist' %}">Companies</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-item nav-link" href="">Latest Reviews</a>
+                  <a class="nav-item nav-link" href="{% url 'reviewhome' %}">Latest Reviews</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">

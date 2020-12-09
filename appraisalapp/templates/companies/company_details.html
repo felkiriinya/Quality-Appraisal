@@ -183,7 +183,7 @@
             </div>
         </div>        
         <div class="options">
-            <a class="btn" id="review" href="">Leave A Review  <i class="fas fa-pencil-alt" style="font-size:18px;"></i></a>
+            <a class="btn" id="review" href="{% url 'addreview' company.id %}">Leave A Review  <i class="fas fa-pencil-alt" style="font-size:18px;"></i></a>
             <a class="btn" id="view" href="">Read Reviews  <i class="far fa-comment" style="font-size:18px;"></i></a>
         </div>
         <h4 style="text-align:center"><b>Recent reviews for {{ company.name }}</b></h4>

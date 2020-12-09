@@ -1,0 +1,92 @@
+{% extends 'reviews/base.html' %}
+{% load crispy_forms_tags %}
+{% block page_title %}Leave A Review{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="form-squeeze">
+            <form method="POST" class="reviewForm">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend>Leave a review</legend>
+                    {{ review.title }}
+                    <br>
+                    <br>
+                    {{ review.feedback }}
+                    <hr>
+                    <div class="stars-box">
+                        <div class="stars-con">
+                            <div>
+                                <br>
+                                <label>Mentorship</label>
+                                <br>
+                            </div>
+                            {% for radio in review.mentorship %}
+                                <label for="{{ radio.id_for_label }}" class="formStars">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <span class="radio">{{ radio.tag }}</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                        <div class="stars-con">
+                            <div>
+                                <br>
+                                <label>Hiring</label>
+                                <br>
+                            </div>
+                            {% for radio in review.hiring %}
+                                <label for="{{ radio.id_for_label }}" class="formStars">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <span class="radio">{{ radio.tag }}</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                        <div class="stars-con">
+                            <div>
+                                <br>
+                                <label>Community</label>
+                                <br>
+                            </div>
+                            {% for radio in review.community %}
+                                <label for="{{ radio.id_for_label }}" class="formStars">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <span class="radio">{{ radio.tag }}</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                        <div class="stars-con">
+                            <div>
+                                <br>
+                                <label>Fundraising</label>
+                                <br>
+                            </div>
+                            {% for radio in review.fundraising %}
+                                <label for="{{ radio.id_for_label }}" class="formStars">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <span class="radio">{{ radio.tag }}</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                        <div class="stars-con">
+                            <div>
+                                <br>
+                                <label>Corporate Development</label>
+                                <br>
+                            </div>
+                            {% for radio in review.corporate_development %}
+                                <label for="{{ radio.id_for_label }}" class="formStars">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <span class="radio">{{ radio.tag }}</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                </fieldset>
+                <div class="wrapper">
+                    <button class="btn" id="submit" type="submit">Post Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
