@@ -16,10 +16,10 @@ class CreateReviewForm(forms.ModelForm):
         widgets = {
             'title': Textarea(attrs={'cols': 60, 'rows': 1}),
             'feedback': Textarea(attrs={'cols': 60, 'rows': 15}),
-            'mentorship': forms.RadioSelect,
-            'hiring': forms.RadioSelect,
-            'community': forms.RadioSelect,
-            'fundraising': forms.RadioSelect,
-            'corporate_development': forms.RadioSelect,
+            # 'mentorship': forms.RadioSelect,
+            # 'hiring': forms.RadioSelect,
+            # 'community': forms.RadioSelect,
+            # 'fundraising': forms.RadioSelect,
+            # 'corporate_development': forms.RadioSelect,
         }
 

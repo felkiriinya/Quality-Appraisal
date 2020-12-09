@@ -5,7 +5,7 @@
         
         <div class="review-main">
             <h3><b>{{ review.title }}</b></h3>
-            <div class="emptyStarsSmall">
+            <!-- <div class="emptyStarsSmall">
                 <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                 <i class="fa fa-star" id="emptyStarSmall2"></i>
                 <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -25,7 +25,7 @@
                 <i class="fa fa-star" {% if review.overall < 2.75 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
                 <i class="fa fa-star" {% if review.overall < 3.75 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
                 <i class="fa fa-star" {% if review.overall < 4.75 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
-            </div>
+            </div> -->
             <br>
             <p class="date-author">({{ review.overall|floatformat:2 }} out of 5)</p>
             <p class="date-author">{{ review.date_posted }}</p>
@@ -36,7 +36,7 @@
         <div class="review-ratings">
             <div class="stars-container">
                 <h5><b>Mentorship:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -49,11 +49,13 @@
                     <i class="fa fa-star" {% if review.mentorship != 5 and review.mentorship != 4 and review.mentorship != 3 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
                     <i class="fa fa-star" {% if review.mentorship != 5 and review.mentorship != 4 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
                     <i class="fa fa-star" {% if review.mentorship != 5 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
-                </div>
+                </div> -->
+                <p class="date-author">({{ review.mentorship|floatformat:2 }} out of 5)</p>
             </div>
+            
             <div class="stars-container">
                 <h5><b>Hiring:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -66,11 +68,13 @@
                     <i class="fa fa-star" {% if review.hiring != 5 and review.hiring != 4 and review.hiring != 3 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
                     <i class="fa fa-star" {% if review.hiring != 5 and review.hiring != 4 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
                     <i class="fa fa-star" {% if review.hiring != 5 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
-                </div>
+                </div> -->
+
+                <p class="date-author">({{ review.hiring|floatformat:2 }} out of 5)</p>
             </div>
             <div class="stars-container">
                 <h5><b>Community:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -83,11 +87,13 @@
                     <i class="fa fa-star" {% if review.community != 5 and review.community != 4 and review.community != 3 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
                     <i class="fa fa-star" {% if review.community != 5 and review.community != 4 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
                     <i class="fa fa-star" {% if review.community != 5 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
-                </div>
+                </div> -->
+
+                <p class="date-author">({{ review.community|floatformat:2 }} out of 5)</p>
             </div>
             <div class="stars-container">
                 <h5><b>Fundraising:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -100,11 +106,12 @@
                     <i class="fa fa-star" {% if review.fundraising != 5 and review.fundraising != 4 and review.fundraising != 3 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
                     <i class="fa fa-star" {% if review.fundraising != 5 and review.fundraising != 4 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
                     <i class="fa fa-star" {% if review.fundraising != 5 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
-                </div>
+                </div> -->
+                <p class="date-author">({{ review.fundraising|floatformat:2 }} out of 5)</p>
             </div>
             <div class="stars-container">
                 <h5><b>Corporate Development:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -117,14 +124,10 @@
                     <i class="fa fa-star" {% if review.corporate_dev != 5 and review.corporate_dev != 4 and review.corporate_dev != 3 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
                     <i class="fa fa-star" {% if review.corporate_dev != 5 and review.corporate_dev != 4 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
                     <i class="fa fa-star" {% if review.corporate_dev != 5 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
-                </div>
+                </div> -->
+                <p class="date-author">({{ review.corporate_development|floatformat:2 }} out of 5)</p>
             </div>
         </div>
-        <div class="review-buttons">
-            {% if review.author == user %}
-                <a class="btn" id="update" href="{% url 'review_edit' review.pk %}">Update Review</a>
-                <a class="btn" id="delete" href="{% url 'review_delete' review.pk %}">Delete Review</a>
-            {% endif %}
-        </div>
+        
     </div>
 {% endblock %}

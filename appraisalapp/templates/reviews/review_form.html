@@ -23,12 +23,13 @@
                                 <label>Mentorship</label>
                                 <br>
                             </div>
-                            {% for radio in review.mentorship %}
-                                <label for="{{ radio.id_for_label }}" class="formStars">
+                            {{review.mentorship}}
+                            <!-- {% for radio in review.mentorship %} -->
+                                <!-- <label for="{{ radio.id_for_label }}" class="formStars">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <span class="radio">{{ radio.tag }}</span>
-                                </label>
-                            {% endfor %}
+                                </label> -->
+                            <!-- {% endfor %} -->
                         </div>
                         <div class="stars-con">
                             <div>
@@ -36,12 +37,13 @@
                                 <label>Hiring</label>
                                 <br>
                             </div>
-                            {% for radio in review.hiring %}
+                            {{review.hiring}}
+                            <!-- {% for radio in review.hiring %}
                                 <label for="{{ radio.id_for_label }}" class="formStars">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <span class="radio">{{ radio.tag }}</span>
                                 </label>
-                            {% endfor %}
+                            {% endfor %} -->
                         </div>
                         <div class="stars-con">
                             <div>
@@ -49,12 +51,13 @@
                                 <label>Community</label>
                                 <br>
                             </div>
-                            {% for radio in review.community %}
+                            <!-- {% for radio in review.community %}
                                 <label for="{{ radio.id_for_label }}" class="formStars">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <span class="radio">{{ radio.tag }}</span>
                                 </label>
-                            {% endfor %}
+                            {% endfor %} -->
+                            {{review.community}}
                         </div>
                         <div class="stars-con">
                             <div>
@@ -62,12 +65,13 @@
                                 <label>Fundraising</label>
                                 <br>
                             </div>
-                            {% for radio in review.fundraising %}
+                            {{review.fundraising}}
+                            <!-- {% for radio in review.fundraising %}
                                 <label for="{{ radio.id_for_label }}" class="formStars">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <span class="radio">{{ radio.tag }}</span>
                                 </label>
-                            {% endfor %}
+                            {% endfor %} -->
                         </div>
                         <div class="stars-con">
                             <div>
@@ -75,12 +79,13 @@
                                 <label>Corporate Development</label>
                                 <br>
                             </div>
-                            {% for radio in review.corporate_development %}
+                            {{review.corporate_development}}
+                            <!-- {% for radio in review.corporate_development %}
                                 <label for="{{ radio.id_for_label }}" class="formStars">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <span class="radio">{{ radio.tag }}</span>
                                 </label>
-                            {% endfor %}
+                            {% endfor %} -->
                         </div>
                         <br>
                         <br>

@@ -9,7 +9,7 @@
                 </div>
                 <div class="acc-header-inner-lg">
                     <h2><b>{{ company.name }}</b></h2>
-                    <div class="emptyStars">
+                    <!-- <div class="emptyStars">
                         <i class="fa fa-star" id="emptyStar1"></i>                        
                         <i class="fa fa-star" id="emptyStar2"></i>
                         <i class="fa fa-star" id="emptyStar3"></i>
@@ -29,7 +29,7 @@
                         <i class="fa fa-star" {% if company.avg_rating < 2.75 %} style="display:none;" {% endif %} id="fullStar3"></i>
                         <i class="fa fa-star" {% if company.avg_rating < 3.75 %} style="display:none;" {% endif %} id="fullStar4"></i>
                         <i class="fa fa-star" {% if company.avg_rating < 4.75 %} style="display:none;" {% endif %} id="fullStar5"></i>
-                    </div>
+                    </div> -->
                     <br>
                     <p class="company-rating">({{ company.avg_rating|floatformat:2 }} out of 5)</p>
                 </div>
@@ -56,7 +56,7 @@
         <div class="acc-review-ratings">
             <div class="stars-container">
                 <h5><b>Mentorship:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -76,12 +76,12 @@
                     <i class="fa fa-star" {% if company.avg_mentorship < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_mentorship < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_mentorship < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
-                </div>
+                </div> -->
                 <p class="company-rating">({{ company.avg_mentorship|floatformat:2 }} out of 5)</p>
             </div>
             <div class="stars-container">
                 <h5><b>Hiring:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -101,12 +101,12 @@
                     <i class="fa fa-star" {% if company.avg_hiring < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_hiring < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_hiring < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
-                </div>
+                </div> -->
                 <p class="company-rating">({{ company.avg_hiring|floatformat:2 }} out of 5)</p>
             </div>
             <div class="stars-container">
                 <h5><b>Community:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -126,13 +126,13 @@
                     <i class="fa fa-star" {% if company.avg_community < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_community < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_community < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
-                </div>
+                </div> -->
                 <p class="company-rating">({{ company.avg_community|floatformat:2 }} out of 5)</p>
             </div>
             <div class="stars-container">
                 <br>
                 <h5><b>Fundraising:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -152,13 +152,13 @@
                     <i class="fa fa-star" {% if company.avg_fundraising < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_fundraising < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_fundraising < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
-                </div>
+                </div> -->
                 <p class="company-rating">({{ company.avg_fundraising|floatformat:2 }} out of 5)</p>
             </div>
             <div class="stars-container">
                 <br>
                 <h5><b>Corporate Development:</b></h5>
-                <div class="emptyStarsReview">
+                <!-- <div class="emptyStarsReview">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -178,7 +178,7 @@
                     <i class="fa fa-star" {% if company.avg_corporate < 2.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_corporate < 3.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
                     <i class="fa fa-star" {% if company.avg_corporate < 4.75 %} style="display:none" {% endif %} id="fullStarSmall1"></i>
-                </div>
+                </div> -->
                 <p class="company-rating">({{ company.avg_corporate|floatformat:2 }} out of 5)</p>
             </div>
         </div>        
@@ -192,7 +192,7 @@
                 {% for review in reviews %}
                 <a href="{% url 'reviewdetails' review.pk %}" style="text-decoration:none;">
                     <div class="review-box">
-                        <div class="emptyStarsMini">
+                        <!-- <div class="emptyStarsMini">
                             <i class="fa fa-star" id="emptyStarMini1"></i>                        
                             <i class="fa fa-star" id="emptyStarMini2"></i>
                             <i class="fa fa-star" id="emptyStarMini3"></i>
@@ -212,7 +212,7 @@
                             <i class="fa fa-star" {% if review.overall < 2.75 %} style="display:none;" {% endif %} id="fullStarMini3"></i>
                             <i class="fa fa-star" {% if review.overall < 3.75 %} style="display:none;" {% endif %} id="fullStarMini4"></i>
                             <i class="fa fa-star" {% if review.overall < 4.75 %} style="display:none;" {% endif %} id="fullStarMini5"></i>
-                        </div>
+                        </div> -->
                         <p class="review-title"><b><i>"{{ review.title }}"</i></b></p>
                         <p class="review-author"><b>{{ review.user }} reviewed {{ review.company }}</b></p>
                     </div>
@@ -222,14 +222,6 @@
                 <p style="text-align:center">No reviews have yet been posted for {{ company.name }}. Be the first to provide feedback!</p>
             {% endif %}
         </div>
-        <div class="options">
-            {% if company.author == user %}
-                <br>
-                <a class="btn" id="update" href="{% url 'company_update' company.pk %}">Update Company</a>
-                <a class="btn" id="delete" href="{% url 'company_delete' company.pk %}">Delete Company</a>
-                <br>
-            {% endif %}
-            <br>
-        </div>
+        
     </div>
 {% endblock %}

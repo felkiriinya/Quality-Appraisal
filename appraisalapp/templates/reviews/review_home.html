@@ -7,7 +7,7 @@
         {% for review in reviews %}
             <div class="review-container">
                 <h4><b>{{ review.title }}</b></h4>
-                <div class="emptyStarsSmall">
+                <!-- <div class="emptyStarsSmall">
                     <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                     <i class="fa fa-star" id="emptyStarSmall2"></i>
                     <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -28,7 +28,7 @@
                     <i class="fa fa-star" {% if review.overall < 3.75 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
                     <i class="fa fa-star" {% if review.overall < 4.75 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
                 </div>
-                <br>
+                <br> -->
                 <p class="date-author">({{ review.overall }} out of 5)</p>
                 <p class="date-author"><i>{{ review.date_posted }}</i> | <i>Review of {{ review.company }} by {{ review.user }}</i></p>
                 <hr>

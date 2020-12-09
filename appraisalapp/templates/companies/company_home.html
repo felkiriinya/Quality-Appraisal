@@ -8,7 +8,7 @@
             <a href="{% url 'companydetails' company.pk %}">
                 <div class="acc-container"> 
                     <h4><b>{{ company.name }}</b></h4>
-                    <div class="emptyStarsHome">
+                    <!-- <div class="emptyStarsHome">
                         <i class="fa fa-star" id="emptyStarSmall1"></i>                        
                         <i class="fa fa-star" id="emptyStarSmall2"></i>
                         <i class="fa fa-star" id="emptyStarSmall3"></i>
@@ -28,9 +28,10 @@
                         <i class="fa fa-star" {% if company.avg_rating < 2.75 %} style="display:none;" {% endif %} id="fullStarSmall3"></i>
                         <i class="fa fa-star" {% if company.avg_rating < 3.75 %} style="display:none;" {% endif %} id="fullStarSmall4"></i>
                         <i class="fa fa-star" {% if company.avg_rating < 4.75 %} style="display:none;" {% endif %} id="fullStarSmall5"></i>
-                    </div>
-                    <br>
-                    <br>
+                    </div> -->
+                    <p class="company-rating" >({{ company.avg_rating|floatformat:2 }} out of 5)</p>
+                    <!-- <br>
+                    <br> -->
                     <img class="acc-logo-list" src="{{ company.logo.url }}">
                 </div>
             </a>
